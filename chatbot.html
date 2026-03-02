@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus AI | Futuristic Chatbot</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 8V4H8'/%3E%3Crect width='16' height='12' x='4' y='8' rx='2'/%3E%3Cpath d='M2 14h2'/%3E%3Cpath d='M20 14h2'/%3E%3Cpath d='M15 13v2'/%3E%3Cpath d='M9 13v2'/%3E%3C/svg%3E">
+    <!-- Libraries -->
+    <script src="Library/jquery/jquery.min.js"></script>
+    <script src="Library/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="https://js.puter.com/v2/"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="chatbot.js"></script>
+    <link rel="stylesheet" href="chatbot.css">
+
+
+</head>
+
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button id="newChatBtn" class="new-chat-btn">
+                    <i data-lucide="plus-circle" style="width: 18px; height: 18px;"></i> New Conversation
+                </button>
+            </div>
+
+            <div class="recent-chats">
+                <h3><i data-lucide="history" style="width: 14px; height: 14px; margin-right: 6px;"></i> History</h3>
+                <div id="recentList" class="recent-list">
+                    <!-- Recent chat items -->
+                    <div class="no-chats">Your conversations will appear here</div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <button id="sidebarClearChat" class="sidebar-action-btn">
+                    <i data-lucide="trash-2" style="width: 16px; height: 16px; margin-right: 8px;"></i> Wipe All Data
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chatbox">
+            <div class="header">
+                <div class="bot-avatar">
+                    <i data-lucide="bot"></i>
+                </div>
+                <div class="header-info">
+                    <h1>Nexus AI</h1>
+                    <p><span class="status-dot"></span>Neural Gateway Active</p>
+                </div>
+                <button id="toggleSidebar" class="action-btn" title="Toggle Sidebar">
+                    <i data-lucide="menu"></i>
+                </button>
+                <button id="clearChat" class="action-btn" title="Clear Chat">
+                    <i data-lucide="trash-2"></i>
+                </button>
+            </div>
+            <div class="messages" id="messages">
+                <div class="welcome">
+                    <div class="emoji">
+                        <i data-lucide="sparkles" style="width: 80px; height: 80px; color: var(--accent2);"></i>
+                    </div>
+                    <h2>Welcome to the Future.</h2>
+                    <p>Experience the next generation of AI assistance. Ask anything, or create stunning visuals with a
+                        single prompt.</p>
+                </div>
+            </div>
+
+            <div class="suggestions-container" id="suggestions">
+                <div class="suggestion-chip">Kaise ho? 👋</div>
+                <div class="suggestion-chip">Chatbot kya kar sakta hai? 🤖</div>
+                <div class="suggestion-chip">Ek joke sunao! 😂</div>
+                <div class="suggestion-chip">Aaj ka mausam kaisa hai? 🌦️</div>
+            </div>
+
+            <div class="input-area">
+                <div class="mode-selector">
+                    <select id="chatMode">
+                        <option value="chat" selected>💬 Chat</option>
+                        <option value="image">🎨 Image</option>
+                    </select>
+                </div>
+                <div class="input-wrap">
+                    <textarea id="userInput" rows="1" placeholder="Ask anything..."></textarea>
+                </div>
+                <button class="send-btn" id="sendBtn" title="Send">
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
