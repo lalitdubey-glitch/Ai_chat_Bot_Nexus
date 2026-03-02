@@ -28,11 +28,15 @@ body {
     font-family: 'Outfit', sans-serif;
     color: var(--text);
     height: 100vh;
+    height: -webkit-fill-available;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
+    /* Safe Area insets for mobile */
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Background Blobs */
@@ -87,6 +91,8 @@ body {
     width: 95%;
     max-width: 1200px;
     height: 90vh;
+    height: -webkit-fill-available;
+    height: 90dvh;
     display: flex;
     gap: 24px;
     z-index: 10;
@@ -847,9 +853,16 @@ body {
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1024px) {
+    body {
+        align-items: flex-start;
+        padding-top: 10px;
+    }
+
     .app-container {
         width: 100%;
         height: 100vh;
+        height: -webkit-fill-available;
+        height: 100dvh;
         gap: 0;
     }
 
@@ -901,6 +914,7 @@ body {
 
     .input-area {
         padding: 15px;
+        padding-bottom: calc(15px + env(safe-area-inset-bottom));
         gap: 8px;
     }
 
