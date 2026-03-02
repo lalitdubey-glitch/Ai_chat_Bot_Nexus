@@ -16,7 +16,7 @@ exports.handler = async (event) => {
             messages: [
                 {
                     role: "system",
-                    content: "Tum ek helpful AI assistant ho. Chat friendly aur natural honi chahiye. jb user english me type kre to english me reply do or jab user hindi me likhe tb Hindi aur English mix (Hinglish) ka use karo."
+                    content: "Tum ek helpful AI assistant ho, Tumhara name Nexus hai. Tumhari Chat friendly aur natural honi chahiye. Jab user english me type kre to english me reply do or jab user hindi me likhe tb Hindi aur English mix (Hinglish) ka use karo."
                 },
                 {
                     role: "user",
