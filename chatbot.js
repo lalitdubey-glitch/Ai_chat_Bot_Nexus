@@ -510,28 +510,12 @@ async function generateImage(prompt) {
 }
 function callGroqAPI(userMessage) {
     let request = $.ajax({
-        url: "https://api.groq.com/openai/v1/chat/completions",
+        url: "/.netlify/functions/grok",
         method: "POST",
         contentType: "application/json",
-        headers: {
-            "Authorization": "Bearer " + GROQ_API_KEY
-        },
-        data: JSON.stringify({
-            model: "llama-3.3-70b-versatile",
-            messages: [
-                {
-                    role: "system",
-                    content: "Tum ek helpful AI assistant ho. Chat friendly aur natural honi chahiye. jb user english me type kre to english me reply do or jab user hindi me likhe tb Hindi aur English mix (Hinglish) ka use karo."
-                },
-                {
-                    role: "user",
-                    content: userMessage
-                }
-            ],
-            max_tokens: 1024,
-            temperature: 0.7
-        })
+        data: JSON.stringify({ userMessage: userMessage })
     });
 
     return request;
 }
+
